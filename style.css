@@ -1,0 +1,84 @@
+body {
+    font-family: arial,helvetica,sans-serif;
+    font-size: 0.8em;
+}
+
+.error {
+    color: #f00;
+}
+
+#registration_form table {
+    margin: 5px;
+    padding: 5px;
+    border: 0px;
+}
+
+#registration_form .label {
+    width: 250px;
+    border-bottom: 1px dotted #aaa;
+    font-size: 14px;
+}
+
+#registration_form .field td {
+    padding: 5px;
+}
+
+.value input, .value select, .value textarea {
+    width: 90%;
+}
+
+#registration_form .info {
+    font-size: smaller;
+}
+
+.overview {
+    width: 600px;
+}
+
+.overview .field td {
+    padding: 5px;
+}
+
+.overview .label {
+    width: 300px;
+    border-bottom: 1px dotted #aaa;
+}
+
+.overview .value {
+    width: 300px;
+    overflow: auto;
+}
+
+.tshirt_size.field .info {
+    border: 1px solid #000;
+    background-color: #ac1b2c;
+    color: #fff;
+}
+
+.girlie_size.field .info {
+    border: 1px solid #000;
+    background-color: #ac1b2c;
+    color: #fff;
+}
+
+.pullover_color .info .black{
+    border: 1px solid;
+    background-color: #000;
+    color: #fff;
+}
+
+.pullover_color .info .darkgreen{
+    border: 1px solid;
+    background-color: #262;
+    color: #000;
+}
+
+.pullover_color .info .burgund{
+    border: 1px solid #000;
+    background-color: #6a1e44;
+    color: #fff;
+}
+
+.field .info {
+    color: #666;
+}
