@@ -232,9 +232,9 @@ function check_email($value)
         return "Ungültige E-Mailadresse";
     if (count($email_parts) != 2)
         return "Ungültige E-Mailadresse";
-//     $host = explode('.', $email_parts[1]);
-//     if (strlen($host[0]) == 0 or strlen($host[1]) == 0)
-//         return "Ungültige E-Mailadresse.";
+    $host = explode('.', $email_parts[1]);
+    if (strlen($host[0]) == 0 or strlen($host[1]) == 0)
+        return "Ungültige E-Mailadresse.";
     return null;
 }
 
