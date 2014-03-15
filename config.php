@@ -1,28 +1,34 @@
 <?php
 
+$DUMP_PDF = false;
+
 $workshops = array(
     array('', array('' => 'Bitte wählen...')),
     array('Bild', array('camptv' => 'CampTV',
                         'digital' => 'Foto Digital',
                         'kurzfilm' => 'Kurzfilm',
-                        'analog' => 'Photo Analog')),
+                        'analog' => 'Foto Analog',
+                        'vjing' => 'VJing')),
     array('Ton', array('acapampa' => 'Acapampa',
                        'jamsession' => 'JamSession',
-                       'radio' => 'Podcast/Radio')),
-    array('Wort', array('fremdsprache' => '(Fremd-)Sprache',
-                        'moderation' => 'Moderation',
+                       'radio' => 'Radio')),
+    array('Wort', array('gespraechsfuehrung' => 'Gesprächsführung',
+                        'moderation' => 'Rhetorik und Moderation',
                         'pampaper' => 'PampaPaper',
-                        'poetry_slam' => 'Poetry Slam')),
+                        'poetry_slam' => 'Poetry Slam',
+                        'drehbuch' => 'Drehbücher')),
     array('Gesellschaft &amp; Kreatives', array('3affen' => '3 Affen',
-                                                'kunst' => 'Kunst',
+                                                'kunst' => 'Ein Körnchen Kunst',
                                                 'medienphilo' => 'Philosophie 2.0',
                                                 'theater' => 'Theater',
-                                                'webdesign' => 'Webdesign')),
+                                                'kackscheisse' => 'KREATIVE KACKSCHEISSE',
+                                                'poster' => 'PosterMania',
+                                                'medienmani' => 'Medienmanipulation')),
     );
 
 
-$jmc_start_date = '2013/05/17';
+$jmc_start_date = '2014/06/06';
 
-$pdf_template = "anmeldung2013.pdf";
+$pdf_template = "anmeldung2014.pdf";
 ?>
 

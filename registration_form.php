@@ -33,6 +33,7 @@ tshirt_size varchar (2),
 girlie_size varchar (2),
 pullover_size varchar (2),
 pullover_color varchar (2),
+association varchar (5) default '',
 no_mail bool,
 allow_contact_info bool,
 comments varchar(512)
@@ -232,9 +233,9 @@ function check_email($value)
         return "Ungültige E-Mailadresse";
     if (count($email_parts) != 2)
         return "Ungültige E-Mailadresse";
-    $host = explode('.', $email_parts[1]);
-    if (strlen($host[0]) == 0 or strlen($host[1]) == 0)
-        return "Ungültige E-Mailadresse.";
+//     $host = explode('.', $email_parts[1]);
+//     if (strlen($host[0]) == 0 or strlen($host[1]) == 0)
+//         return "Ungültige E-Mailadresse.";
     return null;
 }
 
@@ -252,24 +253,23 @@ function dateDifference($startDate, $endDate)
 
     // Calculate months
     $months = $endMonth - $startMonth;
-    if ($months <= 0)  {
+    if ($months < 0)  {
         $months += 12;
         $years--;
     }
     if ($years < 0)
         return false;
 
-    // Calculate the days
-                $offsets = array();
-                if ($years > 0)
-                    $offsets[] = $years . (($years == 1) ? ' year' : ' years');
-                if ($months > 0)
-                    $offsets[] = $months . (($months == 1) ? ' month' : ' months');
-                $offsets = count($offsets) > 0 ? '+' . implode(' ', $offsets) : 'now';
-
-                $days = $endDate - strtotime($offsets, $startDate);
-                $days = date('z', $days);
-
+    $endDays = date('d', $endDate);
+    $startDays = date('d', $startDate);
+    $days = $endDays - $startDays;
+    if ($days < 0) {
+        $months--;
+        if ($months < 0)  {
+            $months += 12;
+            $years--;
+        }
+    }
     return array($years, $months, $days);
 }
 
@@ -453,6 +453,12 @@ $form = new Form(array(new Chooser("gender", array(
                        new Chooser ("pullover_color", array(
                             's' => 'schwarz',
                             'b' => 'burgund')),
+                       new Chooser ("association", array(
+                            '' => 'keinem der genannten Vereine.',
+                            'JPB' => 'Junge Presse Berlin',
+                            'jpvb' => 'Jugendpresseverband Brandenburg',
+                            'JMMV' => 'Jugendmedienverband MV',
+                            'DLRG' => 'DLRG Berlin Mitte')),
                        new CheckBox("no_mail", "no_mail", false),
                        new CheckBox("allow_contact_info", "allow_contact_info", true),
                        new TextArea("comments"),
@@ -492,6 +498,7 @@ $labels = array("gender" => "Geschlecht",
                 "girlie_size" => "Ich kaufe ein Girlie-Shirt für 8€.",
                 "pullover_size" => "Ich kaufe einen Pullover für 20€.",
                 "pullover_color" => "Pullover-Farbe",
+                "association" => "Ich bin Mitglied bei:",
                 "no_mail" => "Ich möchte meine Anmeldebestätigung nicht per E-Mail, sondern per Post erhalten",
                 "allow_contact_teamer" => "Meine Teamer dürfen mich per Mail kontaktieren",
                 "allow_contact_association" => "Ich möchte Information meines lokalen Jugendpresseverbandes erhalten.",
@@ -618,7 +625,7 @@ $stmt->close();
 
 
 
-require("tmpl/header.html");
+require("tmpl/header.php");
 if (!$finished or $back) {
     require("tmpl/render_form.php");
 } else if (!$accept) {
@@ -652,6 +659,10 @@ if (!$finished or $back) {
 
     $pdf_filename = "anmeldung_jmc.pdf";
     $pdf_data = generate_pdf($form);
+
+    if ($DUMP_PDF) {
+        file_put_contents($pdf_filename, $pdf_data);
+    }
 
     $email_text  = "Hallo, " . $data["first_name"] . ",\n";
     $email_text .= "\n";

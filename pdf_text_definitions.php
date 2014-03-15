@@ -15,6 +15,7 @@ $pdf_text_definitions = array(
     "workshop_3" => array(16, 32, 219.5),
 
     "shelters" => array(10, 160, 183.75),
+    "association" => array(10, 50, 180)
 );
 
 $comment_coordinates = array(10, 30, 228.25);

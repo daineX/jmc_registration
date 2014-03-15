@@ -1,4 +1,4 @@
-<h1>Anmeldung Jugendmediencamp 2013</h1>
+<h1>Anmeldung Jugendmediencamp 2014</h1>
 Um die Anmeldung abzuschließen, benötigst du einen Drucker, da wir eine Unterschrift brauchen.<br/>
 Wenn du partout keinen Drucker zur Hand hast, schicken wir dir natürlich auch gerne ein "analoges" Formular zu.<br/>
 Schreib einfach an <a href="mailto:info@jugendmediencamp.de">info@jugendmediencamp.de</a>!
