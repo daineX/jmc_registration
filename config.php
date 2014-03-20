@@ -18,12 +18,12 @@ $workshops = array(
                         'poetry_slam' => 'Poetry Slam',
                         'drehbuch' => 'Drehbücher')),
     array('Gesellschaft &amp; Kreatives', array('3affen' => '3 Affen',
-                                                'kunst' => 'Ein Körnchen Kunst',
                                                 'medienphilo' => 'Philosophie 2.0',
-                                                'theater' => 'Theater',
-                                                'kackscheisse' => 'KREATIVE KACKSCHEISSE',
-                                                'poster' => 'PosterMania',
                                                 'medienmani' => 'Medienmanipulation')),
+    array('Kreatives', array('theater' => 'Theater',
+                             'kunst' => 'Ein Körnchen Kunst',
+                             'kackscheisse' => 'KREATIVE KACKSCHEISSE',
+                             'poster' => 'PosterMania')),
     );
 
 
