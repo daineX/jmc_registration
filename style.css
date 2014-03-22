@@ -79,6 +79,12 @@ body {
     color: #fff;
 }
 
+.pullover_color .info .navy{
+    border: 1px solid #000;
+    background-color: #25316a;
+    color: #fff;
+}
+
 .field .info {
     color: #666;
 }

@@ -452,7 +452,7 @@ $form = new Form(array(new Chooser("gender", array(
                             'XL' => 'XL')),
                        new Chooser ("pullover_color", array(
                             's' => 'schwarz',
-                            'b' => 'burgund')),
+                            'n' => 'navy')),
                        new Chooser ("association", array(
                             '' => 'keinem der genannten Vereine.',
                             'JPB' => 'Junge Presse Berlin',
@@ -510,7 +510,7 @@ $info_labels = array("birthday" => "(TT.MM.JJJJ)",
                      "parents_contact" => "bei Minderjährigen",
                      "tshirt_size" => "&nbsp;&nbsp;&nbsp;rot&nbsp;&nbsp;&nbsp;",
                      "girlie_size" => "&nbsp;&nbsp;&nbsp;rot&nbsp;&nbsp;&nbsp;",
-                     "pullover_color" => '<span class="black">schwarz</span> oder <span class="burgund">burgund</span>',
+                     "pullover_color" => '<span class="black">schwarz</span> oder <span class="navy">navy</span>',
                      "comments" => "Ernährung, gesundheitliche Einschränkungen ...",
                      "telephone" => "für Rückfragen"
 );
@@ -666,7 +666,7 @@ if (!$finished or $back) {
 
     $email_text  = "Hallo, " . $data["first_name"] . ",\n";
     $email_text .= "\n";
-    $email_text .= "vielen Dank für deine Anmeldung zum Jugendmediencamp 2013.\n";
+    $email_text .= "vielen Dank für deine Anmeldung zum Jugendmediencamp 2014.\n";
     $email_text .= "Deine Anmeldung ist schon fast am Ziel. Einfach die angehängte PDF-Datei\n";
     $email_text .= "ausdrucken, unterschreiben und an\n";
     $email_text .= "\n";
@@ -678,25 +678,25 @@ if (!$finished or $back) {
     $email_text .= "\n";
     $email_text .= "Wichtig: Wenn du noch nicht 18 bist, müssen deine Eltern auch unterschreiben.\n";
     $email_text .= "Erst wenn wir das unterschriebene Formular erhalten haben, bist du angemeldet. \n";
-    $email_text .= "Also schnell ausdrucken und bis 29. April 2013 abschicken.\n";
+    $email_text .= "Also schnell ausdrucken und bis 19. Mai 2014 abschicken.\n";
     $email_text .= "\n";
     $email_text .= "Erst nach Anmeldeschluss teilen wir die Workshops zu. So hat jeder die gleiche Chance,\n";
-    $email_text .= "einen Platz in seinem Wunsch-Workshop zu bekommen. Bis 5. Mai schicken wir dir\n";
+    $email_text .= "einen Platz in seinem Wunsch-Workshop zu bekommen. Bis 23. Mai schicken wir dir\n";
     $email_text .= "dann eine Anmeldebestätigung, in der dir dein Workshop mitgeteilt wird.\n";
     $email_text .= "\n";
-    $email_text .= "Solltest du nicht kommen können, musst du bis zum 10. Mai 2013\n";
-    $email_text .= "absagt haben, ansonsten ist eine Ausfallgebühr von 40€ zu zahlen oder\n";
+    $email_text .= "Solltest du nicht kommen können, musst du bis zum 30. Mai 2014\n";
+    $email_text .= "absagt haben, ansonsten ist eine Ausfallgebühr von 50€ zu zahlen oder\n";
     $email_text .= "ein Krankenschein vorzulegen.\n";
     $email_text .= "\n";
     $email_text .= "Wenn du weitere Fragen hast, wende dich bitte an info@jugendmediencamp.de \n";
-    $email_text .= "oder 030 / 577 034 120.\n";
+    $email_text .= "oder 0331 / 2797 320.\n";
     $email_text .= "\n";
     $email_text .= "Viele Grüße und bis Pfingsten,\n";
     $email_text .= "dein JMC-Org-Team";
 
     $additional_headers = build_headers($email_text, $pdf_filename, $pdf_data);
 
-    $subject = "Anmeldung zum JMC 2013";
+    $subject = "Anmeldung zum JMC 2014";
 
     if (!mail($data["email"], '=?UTF-8?B?'.base64_encode($subject).'?=', "", $additional_headers))
     {
